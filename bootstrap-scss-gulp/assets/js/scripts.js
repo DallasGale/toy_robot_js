@@ -25,6 +25,29 @@ $(function(){
 
 
 
+
+
+    /// PLACE ///
+
+
+    var east = 0;
+    var north = 0;
+    var direction = "NORTH";
+
+    var place = $('.place').click(function(east, north, direction) {
+        var xy = prompt('Take your robot for a walk! \n Example: \"0,3 NORTH\"');
+
+        if (xy != null) {
+            output.append('<code> PLACE: ' +
+                east + ', ' +
+                north + ', ' +
+                direction + '</code><br />');
+        }
+    });
+
+    console.log('my ' + place);
+
+
     /// CONSOLE ///
 
     var consoleWindow = $('.move').click(function() {

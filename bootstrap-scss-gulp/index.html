@@ -11,16 +11,64 @@
 <body>
 
     <div class="container">
-        <h1>ISOBAR Toy-Robot Challenge</h1>
+        <header class="header">
+            <h1>ISOBAR Toy-Robot Challenge</h1>
+        </header>
 
         <div class="row">
             <div class="col-xs-12">
-                <button id="placeBtn" title="PLACE" class="btn btn-default place">PLACE</button>
-                <button title="MOVE: NORTH" class="btn btn-default move north">MOVE: N</button>
-                <button title="MOVE: EAST" class="btn btn-default move east">MOVE: E</button>
-                <button title="MOVE: SOUTH" class="btn btn-default move south">MOVE: S</button>
-                <button title="MOVE: WEST" class="btn btn-default move west">MOVE: W</button>
-                <button id="reportBtn" title="REPORT" class="btn btn-default">REPORT</button>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">X</span>
+                                    <input type="text" class="form-control btn-default" aria-describedby="basic-addon1" placeholder="0" id="posX" value="0" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Y</span>
+                                    <input type="text" class="form-control btn-default" placeholder="0" id="posY" value="0" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">F</span>
+                                    <input type="text" class="form-control btn-default" placeholder="NORTH" id="posF" value="NORTH" />
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <button id="placeBtn" title="PLACE" class="btn btn-default place">PLACE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <button title="MOVE: NORTH" class="btn btn-default move north">MOVE: N</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button title="MOVE: EAST" class="btn btn-default move east">MOVE: E</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button title="MOVE: SOUTH" class="btn btn-default move south">MOVE: S</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button title="MOVE: WEST" class="btn btn-default move west">MOVE: W</button>
+                            </div>
+                            <div class="col-xs-12">
+                                <button id="reportBtn" title="REPORT" class="btn btn-default">REPORT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                </div>
             </div>
         </div>
         <div class="row">
