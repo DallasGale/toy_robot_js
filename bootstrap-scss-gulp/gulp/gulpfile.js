@@ -16,9 +16,10 @@ gulp.task('serve', ['sass'], function() {
     });
 
     gulp.watch(path + "/assets/scss/*.scss", ['sass']);
-    gulp.watch(path + "/assets/js/**/*.js", ['concat']);
+    gulp.watch(path + "/assets/js/**/*.js", ['concat']).on('change', browserSync.reload);
     gulp.watch(path + "/*.html").on('change', browserSync.reload);
 });
+
 
 gulp.task('sass', function() {
     return gulp.src(path + "/assets/scss/*.scss")

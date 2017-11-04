@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>ISOBAR - Test</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/main.min.css" rel="stylesheet">
 </head>
@@ -12,13 +12,34 @@
 
     <div class="container">
         <h1>ISOBAR Toy-Robot Challenge</h1>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <button id="placeBtn" title="PLACE" class="btn btn-default place">PLACE</button>
+                <button title="MOVE: NORTH" class="btn btn-default move">MOVE: N</button>
+                <button title="MOVE: EAST" class="btn btn-default move">MOVE: E</button>
+                <button title="MOVE: SOUTH" class="btn btn-default move">MOVE: S</button>
+                <button title="MOVE: WEST" class="btn btn-default move">MOVE: W</button>
+                <button id="reportBtn" title="REPORT" class="btn btn-default">REPORT</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div id="consoleWindow">
+                    <h2>Commands</h2>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div id="results">
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="assets/js/vendors/jquery-1.11.3.min.js"></script>
     <script src="assets/js/vendors/bootstrap.min.js"></script>
     <script src="assets/js/scripts.js"></script>
-
-
 
 </body>
 </html>
