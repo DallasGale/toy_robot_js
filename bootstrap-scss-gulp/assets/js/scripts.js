@@ -1,16 +1,13 @@
 "use strict";
 
-console.log('hi');
 
 $(function(){
+    alert('Hello ISOBAR! ' +
+        '\nWelcome to my attempt of the TOY ROBOT CODING CHALLENGE. It took me around 8 hrs and is not exactly complete.' +
+        '\n\nTurn LEFT + RIGHT are not present but instead I have MOVE:\[DIRECTION\]');
 
-    $('body').css({
-        'backgroundColor': '#f74902', 'color': 'white'
-    });
 
-
-    /// ROBOT INIT ///
-    var robot = 0;
+    /// INIT ///
     var x = 0;
     var y = 0;
     var f = "";
@@ -22,22 +19,12 @@ $(function(){
     /// WARNING ///
     var warning = null;
     function warningMsg() {
-        warning = prompt('Robot is on a suicide mission! \nAre you sure you want to do this?');
-        if (warning === "yes") {
-            console.log("robot is now outside the table");
-            return true;
-        } else if (warning === "no") {
-            console.log("no");
-            output.text("");
-            x = 0;
-            y = 0;
-        } else {
-            output.text("");
-            x = 0;
-            y = 0;
-        }
+        warning = alert('Your TOY ROBOT is on a suicide mission!!!! ' +
+            '\nYou are forbidden to leave the table. ');
+        output.text("");
+        x = 0;
+        y = 0;
     }
-;
 
     /// POSITION ARRAY ///
     var position = $('.move').map(function() {
@@ -45,73 +32,66 @@ $(function(){
     });
     console.log(position);
 
-
     $('#placeSubmit').click(function() {
         x = $('#posX').val(); /// EAST + WEST
         console.log(x);
         y = $('#posY').val(); /// NORTH + SOUTH
         console.log(y);
         f = $('#dirF').val(); /// NORTH EAST SOUTH WEST
+
+
         console.log('PLACE: ' + x + ',' + y + ',' + f);
         if (x != null && y != null && f != "") {
-            output.append('<code>PLACE: ' + x + ',' + y + ',' + f + '</code><br />');
+            output.append('<code class="code">PLACE: ' + x + ',' + y + ',' + f + '</code><br />');
         }
     });
 
-
-
     /// CONSOLE ///
-
     var consoleWindow = $('.move').click(function() {
+
         var title = $(this).attr('title')
-        output.append('<code>' + title + '</code><br />');
-        console.log('hi from coords: x: ' + x + ' y: ' + y + ' f: ' + f);
+        output.prepend('<code class="code">' + title + '</code><br />');
 
         // switch here?? //
         if($(this).hasClass('move west')) {
             x--;
-            console.log('move west' + x);
+            f = "WEST";
         } else if($(this).hasClass('south')) {
             y--;
-            console.log('move south' + y);
+            f = "SOUTH";
 
         } else if($(this).hasClass('north')) {
             y++;
-            console.log('move north' + y);
+            f = "NORTH";
 
         } else if($(this).hasClass('east')) {
             x++;
-            console.log('move east' + x);
+            f = "EAST";
         }
 
-        if(x >= 0 && x <= 4 || y >= 0 && y <= 4 ) {
+        if(x > 0 && x < 5 || y > 0 && y < 5 ) {
             console.log('robot is inside the table');
         }
 
 
-        if (x <= -1) {
+        if (x < 0) {
             warningMsg();
         }
-        if (y <= -1) {
+        if (y < 0) {
             warningMsg();
         }
-        if (x >= 4) {
+        if (x > 5) {
             warningMsg();
         }
-        if (y >= 4) {
+        if (y > 5) {
             warningMsg();
         }
     });
 
 
-
-
-    
-
-
     /// REPORT ///
     $('#reportBtn').click(function(){
-        $('#report').html('<code>PLACE: ' + x + ',' + y + ',' + f + '</code>')
+        $('#report').html('<code class="code">PLACE: ' + x + ',' + y + ',' + f + '</code>')
     });
 
 });

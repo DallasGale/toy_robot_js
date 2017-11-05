@@ -12,14 +12,17 @@
 
     <div class="container">
         <header class="header">
-            <h1>ISOBAR Toy-Robot Challenge</h1>
+            <h1>
+                <img class="header__logo" src="./assets/images/logo.svg"> Toy-Robot Challenge
+            </h1>
+                <small style="text-align: center; display: block;">By Dallas Gale</small>
         </header>
 
         <div class="row">
             <div class="col-xs-12">
 
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-md-12">
                         <form id="placeForm">
                             <div class="row">
                                 <div class="col-xs-4">
@@ -47,19 +50,21 @@
                         </form>
                     </div>
 
-                    <div class="col-xs-6">
+                    <div class="col-md-12">
                         <div class="row">
                             <div class="col-xs-6">
-                                <button title="MOVE: NORTH" class="btn btn-default move north">MOVE: N</button>
+                                <button title="MOVE: NORTH" class="btn btn-default move north">MOVE: NORTH DIRECTION</button>
                             </div>
                             <div class="col-xs-6">
-                                <button title="MOVE: EAST" class="btn btn-default move east">MOVE: E</button>
+                                <button title="MOVE: EAST" class="btn btn-default move east">MOVE: EAST DIRECTION</button>
                             </div>
                             <div class="col-xs-6">
-                                <button title="MOVE: SOUTH" class="btn btn-default move south">MOVE: S</button>
+                                <button title="MOVE: WEST" class="btn btn-default move west">MOVE: WEST DIRECTION</button>
+
                             </div>
                             <div class="col-xs-6">
-                                <button title="MOVE: WEST" class="btn btn-default move west">MOVE: W</button>
+                                <button title="MOVE: SOUTH" class="btn btn-default move south">MOVE: SOUTH DIRECTION</button>
+
                             </div>
                             <div class="col-xs-12">
                                 <button id="reportBtn" title="REPORT" class="btn btn-default btn-submit">REPORT</button>
@@ -67,16 +72,13 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-
-                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-6">
                 <h2>Commands</h2>
-                <div id="consoleWindow"></div>
+                <div id="consoleWindow" class="console-window">
+                </div>
             </div>
             <div class="col-xs-6">
                 <h2>Report</h2>
