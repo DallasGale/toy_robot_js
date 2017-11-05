@@ -11,11 +11,33 @@ $(function(){
 
     /// ROBOT INIT ///
     var robot = 0;
-    console.log('Robot is currently at position: ' + robot);
+    var x = 0;
+    var y = 0;
+    var f = "";
+
+    console.log('Robot is currently at position: ' + x + ',' + y + ',' + f);
 
     var output = $('#consoleWindow');
 
-
+    /// WARNING ///
+    var warning = null;
+    function warningMsg() {
+        warning = prompt('Robot is on a suicide mission! \nAre you sure you want to do this?');
+        if (warning === "yes") {
+            console.log("robot is now outside the table");
+            return true;
+        } else if (warning === "no") {
+            console.log("no");
+            output.text("");
+            x = 0;
+            y = 0;
+        } else {
+            output.text("");
+            x = 0;
+            y = 0;
+        }
+    }
+;
 
     /// POSITION ARRAY ///
     var position = $('.move').map(function() {
@@ -24,28 +46,18 @@ $(function(){
     console.log(position);
 
 
-
-
-
-    /// PLACE ///
-
-
-    var east = 0;
-    var north = 0;
-    var direction = "NORTH";
-
-    var place = $('.place').click(function(east, north, direction) {
-        var xy = prompt('Take your robot for a walk! \n Example: \"0,3 NORTH\"');
-
-        if (xy != null) {
-            output.append('<code> PLACE: ' +
-                east + ', ' +
-                north + ', ' +
-                direction + '</code><br />');
+    $('#placeSubmit').click(function() {
+        x = $('#posX').val(); /// EAST + WEST
+        console.log(x);
+        y = $('#posY').val(); /// NORTH + SOUTH
+        console.log(y);
+        f = $('#dirF').val(); /// NORTH EAST SOUTH WEST
+        console.log('PLACE: ' + x + ',' + y + ',' + f);
+        if (x != null && y != null && f != "") {
+            output.append('<code>PLACE: ' + x + ',' + y + ',' + f + '</code><br />');
         }
     });
 
-    console.log('my ' + place);
 
 
     /// CONSOLE ///
@@ -53,47 +65,53 @@ $(function(){
     var consoleWindow = $('.move').click(function() {
         var title = $(this).attr('title')
         output.append('<code>' + title + '</code><br />');
-        console.log('hi from robot: ' + robot);
+        console.log('hi from coords: x: ' + x + ' y: ' + y + ' f: ' + f);
 
         // switch here?? //
-        if($(this).hasClass('west')) {
-            robot -= 1;
-            console.log('west');
+        if($(this).hasClass('move west')) {
+            x--;
+            console.log('move west' + x);
         } else if($(this).hasClass('south')) {
-            robot -= 1;
-            console.log('south');
+            y--;
+            console.log('move south' + y);
+
         } else if($(this).hasClass('north')) {
-            robot += 1;
-            console.log('north');
+            y++;
+            console.log('move north' + y);
+
         } else if($(this).hasClass('east')) {
-            robot += 1;
-            console.log('east');
+            x++;
+            console.log('move east' + x);
+        }
+
+        if(x >= 0 && x <= 4 || y >= 0 && y <= 4 ) {
+            console.log('robot is inside the table');
         }
 
 
-        if(robot >= 0 && robot <= 4) {
-            console.log('robot is inside the table');
-
-        } else {
-            var warning = prompt('Robot is on a suicide mission! \nAre you sure you want to do this?');
-            if (warning === "yes") {
-                console.log("robot is now outside the table");
-                return true;
-            } else if (warning === "no") {
-                console.log("no");
-                output.text("");
-                robot = 0;
-            } else {
-                output.text("");
-                robot = 0;
-            }
+        if (x <= -1) {
+            warningMsg();
+        }
+        if (y <= -1) {
+            warningMsg();
+        }
+        if (x >= 4) {
+            warningMsg();
+        }
+        if (y >= 4) {
+            warningMsg();
         }
     });
 
 
+
+
+    
+
+
     /// REPORT ///
     $('#reportBtn').click(function(){
-        $('#report').html('<code>' + robot + '</code>')
+        $('#report').html('<code>PLACE: ' + x + ',' + y + ',' + f + '</code>')
     });
 
 });

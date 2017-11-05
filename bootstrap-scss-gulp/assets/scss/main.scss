@@ -22,6 +22,20 @@
   &:hover {
     transition: all 0.3s;
   }
+  &.btn-submit {
+    background-color:rgba(0,0,0,0.3);
+    &:hover {
+      color: white;
+      background-color: rgba(0,0,0,0.6);
+    }
+    &:focus {
+      color: white;
+      background-color: rgba(0,0,0,0.8);
+    }
+  }
+}
+.form-control {
+  height: 26px;
 }
 .input-group {
   margin-bottom:10px;

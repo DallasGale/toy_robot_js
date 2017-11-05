@@ -20,29 +20,31 @@
 
                 <div class="row">
                     <div class="col-xs-6">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon">X</span>
-                                    <input type="text" class="form-control btn-default" aria-describedby="basic-addon1" placeholder="0" id="posX" value="0" />
+                        <form id="placeForm">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">X</span>
+                                        <input type="text" class="form-control btn-default" id="posX" value="0" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Y</span>
+                                        <input type="text" class="form-control btn-default" id="posY" value="0" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">F</span>
+                                        <input type="text" class="form-control btn-default" id="dirF" value="NORTH" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button id="placeSubmit" name="PLACE" title="PLACE" type="button" class="btn btn-default btn-submit">PLACE</button>
                                 </div>
                             </div>
-                            <div class="col-xs-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Y</span>
-                                    <input type="text" class="form-control btn-default" placeholder="0" id="posY" value="0" />
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon">F</span>
-                                    <input type="text" class="form-control btn-default" placeholder="NORTH" id="posF" value="NORTH" />
-                                </div>
-                            </div>
-                            <div class="col-xs-12">
-                                <button id="placeBtn" title="PLACE" class="btn btn-default place">PLACE</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
 
                     <div class="col-xs-6">
@@ -60,7 +62,7 @@
                                 <button title="MOVE: WEST" class="btn btn-default move west">MOVE: W</button>
                             </div>
                             <div class="col-xs-12">
-                                <button id="reportBtn" title="REPORT" class="btn btn-default">REPORT</button>
+                                <button id="reportBtn" title="REPORT" class="btn btn-default btn-submit">REPORT</button>
                             </div>
                         </div>
                     </div>
